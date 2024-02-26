@@ -62,9 +62,9 @@ namespace Praktika
 
         public void print_data() //характеристики игрока
         {
-            Console.WriteLine($"\r\n        Вы: {name}\r\n" +
-                $"            оружие - {weapon}\r\n" +
-                $"            HP - {max_hp}\r\n");
+            Console.WriteLine($"\r\n          * Вы: {name}\r\n" +
+                $"                оружие - {weapon}\r\n" +
+                $"                HP - {max_hp}\r\n");
         }
         public void print_Basic_attack() //вывод базовой атаки
         {
@@ -111,7 +111,7 @@ namespace Praktika
 
         public void print_Get_potion() //вывод использования зелья
         {
-            Console.WriteLine($"\r\n  +++ Вы восстановили здоровье на {ability_plus}ед +++\r\n");
+            Console.WriteLine($"\r\n   +++ Вы восстановили здоровье на {ability_plus}ед +++\r\n");
         }
     }
 
@@ -131,9 +131,9 @@ namespace Praktika
         //методы класса
         public void print_data() //характеристики монтсра
         {
-            Console.WriteLine($"\r\n        Враг: {name}\r\n" +
-                $"              оружие - {weapon}\r\n" +
-                $"              HP - {max_hp}\r\n");
+            Console.WriteLine($"\r\n          * Враг: {name}\r\n" +
+                $"                  оружие - {weapon}\r\n" +
+                $"                  HP - {max_hp}\r\n");
         }
         public void print_Basic_attack() //вывод базовой атаки
         {

@@ -100,7 +100,7 @@ namespace Praktika_monsters
             treatment.ability_plus = 100;
 
             //Запуск игры
-            string header_game = "**!Добро пожаловать в игровую вселенную!**\r\n\r\n";
+            string header_game = "**! Добро пожаловать в игровую вселенную !**\r\n\r\n";
 
             //центр консоли по горизонтали
             int center_x = (Console.WindowWidth / 2) - (header_game.Length / 2);
@@ -114,7 +114,7 @@ namespace Praktika_monsters
 
             Console.Write("     Легенда:\r\n\r\n");
             shadow_magician.print_Greetings();
-            Console.Write("     Битва:\r\n");
+            Console.Write("     --> Битва:\r\n");
             shadow_magician.print_data();
             ice_dragon.print_data();
 
@@ -196,7 +196,7 @@ namespace Praktika_monsters
                                 ice_dragon.max_hp -= shadow_magician.ultra_attack_damage;
                                 count_special_attack = 0; ;
                             }
-                            else Console.WriteLine("\r\n!! Призовите теневого бойца, чтобы использовать данное заклинание !!\r\n");
+                            else Console.WriteLine("\r\n   !! Призовите теневого бойца, чтобы использовать данное заклинание !!\r\n");
                             break;
 
                         case '+':
