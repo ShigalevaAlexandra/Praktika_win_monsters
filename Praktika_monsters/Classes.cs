@@ -10,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 namespace Praktika
 {
     //Объявление класса персонажей категории "Волшебники"
-    class Wizards
+    class Heroes
     {
         //атрибуты класса
         public string name;  //имя

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -43,7 +44,7 @@ namespace Praktika_monsters
         static void Main(string[] args)
         {
             //Создание объекта класса "Волшебники"
-            Wizards shadow_magician = new Wizards();
+            Heroes shadow_magician = new Heroes();
 
             shadow_magician.name = "Теневой маг";
             shadow_magician.max_hp = 500;
@@ -96,7 +97,7 @@ namespace Praktika_monsters
 
             treatment.title = "4-ех листный клевер";
             treatment.ability = "Восстанавливает HP";
-            treatment.ability_plus = 30;
+            treatment.ability_plus = 100;
 
             //Запуск игры
             string header_game = "**!Добро пожаловать в игровую вселенную!**\r\n\r\n";
@@ -132,6 +133,9 @@ namespace Praktika_monsters
                 string title_hp_bar_monster = "HP монстра "; //хп монстра
                 string hp_bar_monsters = @"[████████]";
 
+                int count_attack_monsters = 0; //счетчик кол-ва аттак монстра
+                int count_special_attack = 0; //счетчик использования "Призыва теневого воина"
+
                 while ((shadow_magician.max_hp > 0) && (ice_dragon.max_hp > 0))
                 {
                     double max_hp_hero = shadow_magician.max_hp;
@@ -158,10 +162,6 @@ namespace Praktika_monsters
                     treatment.print_Ability();
 
                     Console.SetCursorPosition(0, 25);
-
-                    int count_attack_monsters = 0; //счетчик кол-ва аттак монстра
-                    int count_special_attack = 0; //счетчик использования "Призыва теневого воина"
-
 
                     ice_dragon.print_Basic_attack(); //первый удар наносит монстр
                     shadow_magician.max_hp -= ice_dragon.basik_attack_damage;
@@ -194,7 +194,7 @@ namespace Praktika_monsters
                             {
                                 shadow_magician.print_Ultra_attack();
                                 ice_dragon.max_hp -= shadow_magician.ultra_attack_damage;
-                                count_special_attack--; ;
+                                count_special_attack = 0; ;
                             }
                             else Console.WriteLine("\r\n!! Призовите теневого бойца, чтобы использовать данное заклинание !!\r\n");
                             break;
@@ -217,7 +217,9 @@ namespace Praktika_monsters
                     hp_bar_hero = Update_hp_hero(max_hp_hero, hp_bar_hero);
                     hp_bar_monsters = Update_hp_monsters(max_hp_monsters, hp_bar_monsters);
 
+                    Thread.Sleep(5000);
                     Console.Clear();
+
                 }
 
                 //определение результата битвы
